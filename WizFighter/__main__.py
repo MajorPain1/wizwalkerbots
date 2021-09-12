@@ -5,7 +5,7 @@ import wizwalker
 from wizwalker.combat import CombatHandler, CombatMember, CombatCard
 from wizwalker import ClientHandler
 
-async def get_spells_by_type_name(client, type_name: str) -> list[wizwalker.combat.CombatCard]:
+async def get_spells_by_type_name(client, type_name: str) -> List[wizwalker.combat.CombatCard]:
   async def _pred(card):
     return (await card.type_name()).lower() == type_name and await card.is_castable()
 
